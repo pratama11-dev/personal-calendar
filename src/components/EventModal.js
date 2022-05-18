@@ -24,13 +24,14 @@ export default function EventModal() {
   const [description, setDescription] = useState(
     selectedEvent ? selectedEvent.description : ""
   );
+  const [invitedEmail, setInvitedEmail] = useState(
+    selectedEvent ? selectedEvent.invitedEmail : ""
+  );
+
   const [selectedLabel, setSelectedLabel] = useState(
     selectedEvent
       ? labelsClasses.find((lbl) => lbl === selectedEvent.label)
       : labelsClasses[0]
-  );
-  const [invitedEmail, setInvitedEmail] = useState(
-    selectedEvent ? selectedEvent.invitedEmail : ""
   );
 
   function handleSubmit(e) {

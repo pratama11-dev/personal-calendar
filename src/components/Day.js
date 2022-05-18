@@ -24,6 +24,13 @@ export default function Day({ day, rowIdx }) {
       ? "bg-blue-600 text-white rounded-full w-7"
       : "";
   }
+
+  const handleLimitEvents = (evt) => {
+    if (dayEvents.length >= 3) {
+      setShowEventModal(false);
+    }
+  };
+
   return (
     <div className="flex flex-col border border-gray-200">
       <header className="flex flex-col items-center">
@@ -38,18 +45,20 @@ export default function Day({ day, rowIdx }) {
           {day.format("DD")}
         </p>
       </header>
+
       <div
-        className="flex-1 cursor-pointer"
+        className="flex-1 border-t-2 cursor-pointer"
         onClick={() => {
           setDaySelected(day);
           setShowEventModal(true);
+          handleLimitEvents();
         }}
       >
         {dayEvents.map((evt, idx) => (
           <div
             key={idx}
             onClick={() => setSelectedEvent(evt)}
-            className={`bg-${evt.label}-200 p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate`}
+            className={`bg-${evt.label}-200 p-1 text-gray-600 text-sm rounded mt-1 truncate`}
           >
             {evt.title}
           </div>

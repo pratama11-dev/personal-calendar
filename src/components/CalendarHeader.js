@@ -17,7 +17,7 @@ export default function CalendarHeader() {
     );
   }
   return (
-    <header className="flex items-center px-4 py-2">
+    <header className="flex flex-wrap items-center px-4 py-2">
       <h1 className="mr-10 text-xl text-gray-500 fond-bold">
         Personal Calendar
       </h1>
