@@ -28,6 +28,7 @@ export default function Day({ day, rowIdx }) {
   const handleLimitEvents = (evt) => {
     if (dayEvents.length >= 3) {
       setShowEventModal(false);
+      alert("You can only add 3 events per day");
     }
   };
 
